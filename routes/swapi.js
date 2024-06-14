@@ -10,6 +10,6 @@ const router = Router()
 /*---------- Protected Routes ----------*/
 router.use(decodeUserFromToken)
 router.get('/', checkAuth, swapiCtrl.getAllStarships)
-router.get('/:starshipId', checkAuth, swapiCtrl.getAllStarships)
+router.get('/:starshipId', checkAuth, swapiCtrl.getStarship)
 
 export { router }

@@ -1,10 +1,11 @@
-import { Profile } from '../models/profile.js'
-import { v2 as cloudinary } from 'cloudinary'
+const BASE_URL='https://swapi.dev/api/'
+
 
 async function getAllStarships(req, res) {
   try {
-  
-  
+    const result = await fetch(`${BASE_URL}/starships`)
+    const starships = result.json()
+    res.json(starships) 
   } catch (err) {
     console.log(err)
     res.status(500).json(err)
